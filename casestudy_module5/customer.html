@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="/bootstrap/bootstrap413/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/bootstrap/bootstrap413/uyendepgai.jpeg">
+    <style>
+        .menu-button:hover {
+        /;
+            background-color: cadetblue;
+            border-radius: 20px;
+        }
+
+        .center-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .menu {
+            padding: 0
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .row::after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="row" style="height: 70px;margin: 0">
+    <div class="col-md-1 bg-warning center-box">
+        <a class="bi bi-house-heart  font-weight-bold " style=" color :white;border-radius:15px;font-size: 50px"
+           href="http://localhost:63342/furama_prototype/home.html?_ijt=eq7j32l2hgtsuglobi72nap3nc">
+        </a>
+    </div>
+    <div class="col-md-10 bg-warning center-box ">
+        <a href="/customer" class="text-white font-weight-bold" style="font-size: 40px ;text-decoration: none">
+            <p style="color:white; margin: 0; padding: 0">ⒸⓊⓈⓉⓄⓂⒺⓇ &ensp; ⓁⒾⓈⓉ </p>
+        </a>
+    </div>
+    <div class="col-md-1 bg-warning center-box">
+
+        <span class="bi bi-search  btn bg-white font-weight-bold"
+              data-toggle="modal" data-target="#search" style="width:300px;float: right ;border-radius: 20px">
+        </span>
+    </div>
+    <table class="table table-hover table-striped table-center container-fluid" style="margin-top: 0px" id="table">
+        <thead>
+        <tr style="height: 70px">
+            <th style="height: 70px" class="border-0 text-white bg-dark">ID</th>
+            <th style="height: 70px" class="border-0  text-white bg-dark">CUSTOMER TYPE</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">NAME</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">DATE OF BIRTH</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">GENDER</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">INDENTITY</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">PHONE NUMBER</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">EMAIL</th>
+            <th style="height: 70px" class="border-0 text-white  bg-dark">ADDRESS</th>
+            <th style="height: 70px" class="border-0 bg-dark  text-warning">𝔼𝔻𝕀𝕋</th>
+            <th style="height: 70px" class="border-0 bg-dark  text-warning">𝔻𝔼𝕋𝔸𝕀𝕃</th>
+            <th style="height: 70px" class="border-0 bg-dark ">
+                <span style="color: red">𝔻</span>
+                <span style="color: white">𝔼</span>
+                <span style="color: gold">𝕃</span>
+                <span style="color: white">𝔼</span>
+                <span style="color: gold">T</span>
+                <span style="color: red">𝔼</span>
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr >
+            <td>Kh-0001</td>
+            <td>Diamond</td>
+            <td>Nguyễn Thảo Uyên</td>
+            <td>13-08-1999</td>
+            <td>Nữ</td>
+            <td>9999.9999</td>
+            <td>0905.999.999</td>
+            <td>girl9xtimboy2k@gmail.com</td>
+            <td>Đà Nẵng</td>
+            <td><button class="btn btn-warning ml-1" style="border-radius: 20px"><i class="bi bi-pencil-square"></i></button> </td>
+            <td><button class="btn btn-warning ml-2" style="border-radius: 20px"><i class="bi bi-eye"></i></button></td>
+            <td> <button class="btn btn-danger ml-3" style="border-radius: 20px"><i class="bi bi-trash3"></i></button></td>
+        </tr>
+        </tbody>
+        <tr >
+            <td>Kh-0001</td>
+            <td>Diamond</td>
+            <td>Nguyễn Thảo Uyên</td>
+            <td>13-08-1999</td>
+            <td>Nữ</td>
+            <td>9999.9999</td>
+            <td>0905.999.999</td>
+            <td>girl9xtimboy2k@gmail.com</td>
+            <td>Đà Nẵng</td>
+            <td><button class="btn btn-warning ml-1" style="border-radius: 20px"><i class="bi bi-pencil-square"></i></button> </td>
+            <td><button class="btn btn-warning ml-2" style="border-radius: 20px"><i class="bi bi-eye"></i></button></td>
+            <td> <button class="btn btn-danger ml-3" style="border-radius: 20px"><i class="bi bi-trash3"></i></button></td>
+        </tr>
+        <tr >
+            <td>Kh-0001</td>
+            <td>Diamond</td>
+            <td>Nguyễn Thảo Uyên</td>
+            <td>13-08-1999</td>
+            <td>Nữ</td>
+            <td>9999.9999</td>
+            <td>0905.999.999</td>
+            <td>girl9xtimboy2k@gmail.com</td>
+            <td>Đà Nẵng</td>
+            <td><button class="btn btn-warning ml-1" style="border-radius: 20px"><i class="bi bi-pencil-square"></i></button> </td>
+            <td><button class="btn btn-warning ml-2" style="border-radius: 20px"><i class="bi bi-eye"></i></button></td>
+            <td> <button class="btn btn-danger ml-3" style="border-radius: 20px"><i class="bi bi-trash3"></i></button></td>
+        </tr>
+    </table>
+    <table class="table-center container-fluid">
+        <tr>
+            <td colspan="11">
+                <div class="center-box m-4">
+        <span>
+            <a style="border-radius: 30px ;border:solid ;border: goldenrod  ;color: goldenrod"
+               class=" btn btn-outline-dark page m-2" th:if="${customerList.hasPrevious()}"
+               th:href="@{/customer(page = ${customerList.number - 1})}">Previous</a>
+        </span>
+                    <span th:each="pageNo: ${#numbers.sequence(0,customerList.totalPages - 1)}">
+            <a style="border-radius: 30px;border:solid ;border: pink  ;color: goldenrod"
+               class=" btn btn-outline-dark page m-2"
+               th:href="@{/customer(page = ${pageNo})}"
+               th:text="${pageNo + 1}"></a>
+        </span>
+                    <span>
+            <a style="border-radius: 30px;border:solid ;border: goldenrod  ;color: goldenrod"
+               class=" btn btn-outline-dark page m-2" th:if="${customerList.hasNext()}"
+               th:href="@{/customer(page = ${customerList.number +1})}">
+                Next
+            </a>
+        </span>
+                </div>
+            </td>
+
+        </tr>
+        </tr>
+        <tr>
+            <td colspan="11">
+                <div class="center-box w-100">
+                    <a style="border-radius: 30px;border:solid ;border: goldenrod  ;color: goldenrod"
+                       href="/customer/create" class="btn btn-outline-dark font-weight-bold">
+                        <p style="color: goldenrod"> 𝔸𝕕𝕕 𝕟𝕖𝕨 𝕔𝕦𝕤𝕥𝕠𝕞𝕖𝕣 &ensp;
+                            <i class="bi bi-calendar2-plus font-weight-bold" style="font-size: 30px"></i></p>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal" id="delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100 text-center text-danger"> ᴀᴛᴛᴇɴᴛɪᴏɴ</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title w-100 text-center" id="confirm"></h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteById()">
+                    <a class="text-white">Xóa</a>
+                </button>
+                <button type="button" class="btn btn-warning " data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="view">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <h4 class="modal-title w-100 text-center">ɪɴғᴏʀᴍᴀᴛɪᴏɴ</h4>
+            <div class="modal-header" id="views">
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal" id="search">
+    <div style="width: 1000px" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header w-100">
+                <div class="w-100 center-box">
+                    <form method="get" action="/customer/"
+                          class="form-inline my-2 my-lg-0 w-100 center-box">
+                        <div class="p-1 bg-light rounded rounded-pill w-100 shadow-sm center-box">
+                            <div class="input-group center-box w-100 space-around">
+                                <input style="width: 20% " type="search" placeholder="Input id"
+                                       aria-describedby="button-addon1"
+                                       class="form-control border-0 bg-light p-0"
+                                       name="id">
+                                <select style="width: 40% " name="customerId"
+                                        class="form-control border-0 bg-light  p-0">
+                                    <option value="">--customertype--</option>
+                                    <option th:each="item : ${customerType}" th:value="${item.id}"
+                                            th:text="${item.name}"></option>
+                                </select>
+                                <input style="width: 20% " type="search" placeholder="Input name"
+                                       aria-describedby="button-addon1"
+                                       class="form-control border-0 bg-light  p-0"
+                                       name="name">
+                                <div style="width: 20% " class="input-group-append ">
+                                    <button id="button-addon1" type="submit"
+                                            class="btn btn-link text-primary h-100 center-box p-0">
+                                        <i style="margin-left: 30px" class="bi bi-search text-dark center-box"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <button type="button" class="close" data-dismiss="modal ">&times;</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script th:src="@{/bootstrap/jquery/jquery-3.5.1.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script th:src="@{/bootstrap/bootstrap413/js/bootstrap.bundle.min.js}"></script>
+<script>
+    var idToDelete;
+
+    function getId(id) {
+        idToDelete = id;
+        document.getElementById("confirm").innerHTML = "Bạn có muốn xóa khách hàng <br>" + id;
+    }
+
+    function deleteById() {
+        window.location.href = "/customer/delete/" + idToDelete;
+    }
+
+    function detail(id, customerType, name, dateOfBirth, gender, idCard, phoneNumber, email, address) {
+        document.getElementById("views").innerHTML = "" +
+            "Khách hàng id : " + id + "<br>" +
+            "Customer type : " + customerType + " <br>" +
+            "Name : " + name + " <br>" +
+            "Date of birth : " + dateOfBirth + " <br>" +
+            "Gender : " + (gender == 2 ? 'Nam' : 'Nu') + " <br>" +
+            "Indentity : " + idCard + " <br>" +
+            "Phone number : " + phoneNumber + " <br>" +
+            "Email : " + email + " <br>" +
+            "Address : " + address;
+    }
+</script>
+
+</html>

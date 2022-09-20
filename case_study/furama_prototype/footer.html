@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/bootstrap/bootstrap413/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/bootstrap/datatables/css/dataTables.bootstrap4.min.css"/>
+<style>
+    .center-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-button:hover {
+    /;
+        background-color: goldenrod;
+        border-radius: 20px;
+    }
+
+    .bg-color {
+        background: linear-gradient(#d2ffa7, #418768, #0d6e68, #0d6e68, #418768);
+    }
+
+
+    .container {
+        position: relative;
+    }
+
+    .container .noi_dung {
+        width: 80px;
+        height: 70px;
+        background: white;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: reveal 3s ease-in-out forwards;
+    }
+
+    .container .noi_dung img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container .noi_dung::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: white;
+        z-index: 1;
+        animation: reveal 7s reverse forwards;
+        animation-delay: 3s;
+        transform-origin: right;
+    }
+
+    @keyframes reveal {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
+        }
+    }
+
+    .container .noi_dung p {
+        position: absolute;
+        right: -100px;
+        bottom: 0px;
+        margin: 0;
+        padding: 10px;
+        background: #fff;
+        z-index: 2;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: reveal 1s ease-in-out forwards;
+        animation-delay: 1s;
+    }
+
+    .container .noi_dung p::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 1;
+        animation: reveal 1s reverse forwards;
+        animation-delay: 2s;
+        transform-origin: right;
+    }
+
+    .space-around {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-button:hover {
+    /;
+        background-color: red;
+        border-radius: 20px;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+
+    @media(max-width: 990px){
+        .card{
+            margin: 20px;
+        }
+    }
+
+    @media(max-width: 990px){
+        .card{
+            margin: 20px;
+        }
+    }
+</style>
+<body>
+<div class="row bg-color" style="margin-top: 50px ;height: 500px">
+    <div class="col-1"></div>
+    <div class="col-4" style="background-color: #f4fff3 ;margin-top: 20px;margin-bottom: 40px">
+        <h2 style="margin-top: 30px;color: #64774d">Hướng dẫn chuyến đi</h2>
+        <p>Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những điểm đến hấp dẫn nhất Châu Á. Chỉ cách Đà
+            Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO công nhận:</p>
+        <p style="color:#64774d; font-weight: bold"> Địa điểm :</p>
+        <p> 1. Cố đô Huế <span style="margin-left: 230px;font-weight: lighter">2 hours</span>
+        <hr>
+        2. Phố cổ Hội An <span style="margin-left: 200px;font-weight: lighter">2 hours</span>
+        <hr>
+        3. Thánh địa Mỹ Sơn <span style="margin-left: 170px;font-weight: lighter">2 hours</span>
+        <hr>
+        4. Động phong nha<span style="margin-left: 182px;font-weight: lighter">2 hours</span>
+        </p>
+    </div>
+    <div class="col-6">
+        <div class="row" style="height: 250px">
+
+            <div class="col-6">
+                <ul style="margin-top: 70px">
+                    <li><a href="https://furamavietnam.com/vi/furama-resort-danang-rack-rate/"><p style="color: black">Rack rate</p> </a></li>
+                    <li><a href="https://furamavietnam.com/vi/lifestyle-blog/"><p style="color: black">Lifestyle blog</p> </a></li>
+                    <li><a href="https://furamavietnam.com/vi/work-with-us/"><p style="color: black"> Recruit</p> </a></li>
+                    <li><a href="https://furamavietnam.com/vi/contact/"><p style="color: black">Contact</p> </a></li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h6 style="margin-top: 30px;color: #64774d">Resort Furama Da Nang</h6>
+                <i style="color: #0c5460" class="bi bi-geo-alt-fill"> </i>
+                <span style="color: black">
+103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam <br>
+Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666 </br>
+                    Email: reservation@furamavietnam.com * www.furamavietnam.com <br> GDS Codes: Amadeus-GD DADFUR, Galileo/Apollo-GD 16236, Sabre-GD 032771, Worldspan- GD DADFU
+        </span>
+                <hr>
+                <span>
+            <i class="bi bi-facebook" style="color: #10416f;font-size: 30px"></i> &emsp;&emsp;
+                <i class="bi bi-instagram" style="border-radius:5px;color: white;background :linear-gradient(#ed6aec,#f66d21,#6f0685);font-size: 25px" ></i>&emsp;&emsp;
+                <i class="bi bi-youtube" style="color: darkred;font-size: 30px"></i>
+            </span>
+
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 120px ;margin-left: 30px">
+            <img style="width: 800px;height: 150px" src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png">
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+</div>
+</body>
+<script src="/bootstrap/jquery/jquery-3.5.1.min.js"></script>
+<script src="/bootstrap/datatables /js/jquery.dataTables.min.js"></script>
+<script src="/bootstrap/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="/bootstrap/bootstrap413/js/bootstrap.bundle.min.js"></script>
+</html>
