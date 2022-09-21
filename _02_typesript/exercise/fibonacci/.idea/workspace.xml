@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa73ffd4-a081-4854-8250-a940a7ade2a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../casestudy_module5/facility-create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../casestudy_module5/facility-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_module5/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_module5/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../casestudy_module5/facility.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_module5/facility.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
