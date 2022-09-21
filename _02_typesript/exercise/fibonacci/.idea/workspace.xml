@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa73ffd4-a081-4854-8250-a940a7ade2a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../fibonaci/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sum_fibonacci/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sum_fibonacci/src/fibonacci.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sum_fibonacci/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fibonacci-sum 2" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_module5/facility-create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_module5/facility-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../casestudy_module5/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_module5/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663743194264</updated>
-      <workItem from="1663743195845" duration="2152000" />
+      <workItem from="1663743195845" duration="2403000" />
     </task>
     <servers />
   </component>
