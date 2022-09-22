@@ -1,1 +1,37 @@
+<table style="margin-left:400px;margin-top: 30px">
+  <tr><td colspan="5" style="color: #d0316e;font-size: 25px">𝒱𝒾𝓃𝒶𝒸𝒶𝓁</td></tr>
+  <tr><td colspan="5" style="color: #d0316e;font-size: 25px">🆃🅷ả🅾 🆄🆈ê🅽</td></tr>
+  <tr><td colspan="5"><input type="text" [(ngModel)]="result"></td></tr>
+  <tr>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(7)">7</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(8)">8</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(9)">9</button></th>
+    <th><button style="color:#d01640;background: black;border: white;border-radius: 5px" (click)="add(1)">DEL</button></th>
+    <th><button style="color:#d01640;background: black;border:white;border-radius: 5px" (click)="delete()">AC</button></th>
+  </tr>
 
+  <tr>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(4)">4</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(5)">5</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(6)">6</button></th>
+    <th><button style="color:white;background: #d0316e;border: white;border-radius: 5px" (click)="math('+')">+</button></th>
+    <th><button style="color:white;background: #d0316e;border: white;border-radius: 5px" (click)="math('-')">-</button></th>
+  </tr>
+
+  <tr>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(1)">1</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(2)">2</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(3)">3</button></th>
+    <th><button style="color:white;background:  #d0316e;border: white;border-radius: 5px" (click)="math('*')">*</button></th>
+    <th><button style="color:white;background:  #d0316e;border: white;border-radius: 5px" (click)="math('/')">:</button></th>
+  </tr>
+
+  <tr>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(0)">0</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(2)">00</button></th>
+    <th><button style="background: pink;border: white;border-radius: 5px" (click)="add(1)">.</button></th>
+    <th><button style="color:white;background: #d0316e;border: white;border-radius: 5px" (click)="add(2)">Ans</button></th>
+    <th><button style="color:#d01640;background:  black;border: white;border-radius: 5px" (click)="getResult()">=</button></th>
+  </tr>
+
+</table>

@@ -1,0 +1,17 @@
+button{
+  width: 90%;
+  height: 70px;
+  border-radius: 20px;
+}
+input{
+  border: white;
+  width: 100%;
+  border-radius: 10px;
+  height: 70px;
+  background: snow;
+}
+table{
+  height: 500px;
+  width: 500px;
+  background: linear-gradient(#d0316e,lightpink,lightpink,lightpink,lightpink,lightpink,#d0316e);
+}
