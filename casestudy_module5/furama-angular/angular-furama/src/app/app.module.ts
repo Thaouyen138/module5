@@ -9,6 +9,10 @@ import { FacilityComponent } from './facility/facility/facility.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { HeaderComponent } from './header/header/header.component';
 import { HomeComponent } from './home/home/home.component';
+import { FacilityEditComponent } from './facility/facility-edit/facility-edit.component';
+import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
+import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { HomeComponent } from './home/home/home.component';
     FacilityComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    FacilityEditComponent,
+    FacilityCreateComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
