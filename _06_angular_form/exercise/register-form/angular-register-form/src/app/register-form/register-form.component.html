@@ -1,0 +1,66 @@
+<center><h1>REGISTER FORM</h1></center>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit">
+
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" class="form-control" placeholder=" Enter email" formControlName="email">
+      <p *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.touched">Not require</p>
+      <p *ngIf="registerForm.controls.email.hasError('email') && registerForm.controls.email.touched">Wrong format</p>
+    </div>
+
+  <div class="form-control">
+    <label>Password</label>
+    <input type="text" class="form-control" placeholder=" Enter password" formControlName="password">
+    <p *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.touched">Not require</p>
+    <p *ngIf="registerForm.controls.password.hasError('minlength') && registerForm.controls.password.touched">Wrong format,min length is 6</p>
+  </div>
+
+  <div class="form-control">
+    <label>Confirm Password</label>
+    <input type="text" class="form-control" placeholder="Confirm password" formControlName="password">
+    <p *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.touched">Not require</p>
+    <p *ngIf="registerForm.hasError('confirmPass') && registerForm.controls.confirmPassword.touched">Not matches</p>
+    <p *ngIf="registerForm.controls.password.hasError('minLength') && registerForm.controls.password.touched">Wrong format, minlenght is 6</p>
+  </div>
+
+  <div class="form-control">
+    <label>Country</label>
+    <select formControlName="country" class="form-control">
+      <option value="USA">---Country---</option>
+      <option value="USA">USA</option>
+      <option value="JAPAN">JAPAN</option>
+      <option value="VIETNAM">VIET NAM</option>
+      <option value="VIETNAM"> KOREAN</option>
+      <option value="VIETNAM">CAMPUCHIA</option>
+    </select>
+    <p *ngIf="registerForm.controls.country.hasError('required') && registerForm.controls.country.touched">Not require</p>
+  </div>
+
+  <div class="form-control">
+    <label>Age</label>
+    <input type="text" class="form-control" placeholder=" Enter password" formControlName="age">
+    <p *ngIf="registerForm.controls.age.hasError('required') && registerForm.controls.age.touched">Not require</p>
+    <p *ngIf="registerForm.controls.age.hasError('min') && registerForm.controls.age.touched">Wrong format,min age is 18</p>
+  </div>
+
+  <div class="form-group">
+    <label >Gender</label>
+    <select formControlName="gender" class="form-control">
+      <option value="Female">---Gender---</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+    </select>
+    <p *ngIf="registerForm.controls.gender.hasError('required') && registerForm.controls.gender.touched">Not require</p>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input name="email" placeholder=" Enter Phone"type="text" class="form-control" formControlName="phone">
+    <p *ngIf="registerForm.controls.phone.hasError('required') && registerForm.controls.phone.touched">Not require</p>
+    <p *ngIf="registerForm.controls.phone.hasError('pattern')">Wrong format!</p>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-5">Sign in</button>
+
+
+</form>
