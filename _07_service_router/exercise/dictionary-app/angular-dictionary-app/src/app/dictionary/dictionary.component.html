@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Tiếng Anh</th>
+    <th>Tiếng Việt</th>
+    <th>Mô Tả</th>
+  </tr>
+  <tr *ngFor = 'let display of dictionary; let i = index'>
+    <td>{{display.word}}</td>
+    <td>{{display.mean}}</td>
+    <td><button routerLink="/detail/{{display.detail}}">Chi tiết</button></td>
+  </tr>
+</table>
