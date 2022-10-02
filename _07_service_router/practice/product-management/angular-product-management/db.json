@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Smart phone"
+    },
+    {
+      "id": 2,
+      "name": "Laptop"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New",
+      "category": {
+        "id": 1,
+        "name": "Smart phone"
+      }
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "Smart phone"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 1,
+        "name": "Smart phone"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Macbook pro",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 2,
+        "name": "Laptop"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Dell 9",
+      "price": 21312,
+      "description": "9%",
+      "category": {
+        "id": 2,
+        "name": "Laptop"
+      }
+    }
+  ]
+}

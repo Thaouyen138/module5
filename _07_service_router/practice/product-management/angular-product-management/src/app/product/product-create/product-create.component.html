@@ -14,7 +14,15 @@
       <td><input type="text" formControlName="description"></td>
     </tr>
     <tr>
-      <td></td>
+      <td>Danh mục</td>
+      <td>
+        <select formControlName="category">
+          <option>--Chọn danh mục--</option>
+          <option [ngValue]="category" *ngFor="let category of categories">{{category.name}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
       <td><button type="submit">CREATE</button></td>
     </tr>
   </table>

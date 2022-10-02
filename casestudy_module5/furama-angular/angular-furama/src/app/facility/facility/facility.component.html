@@ -1,160 +1,24 @@
 <div class="body" style="width: 100%">
   <div style="margin-left: 100px" class="row space-around">
-    <div class="col-4 ">
+    <div *ngFor="let facility of facilityList" class="col-4 ">
       <div class="card" style="width: 22rem;">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/03/%5E224942630D3A5A787C2989A9F5AF4A3E34E6A8CAE8D94FA3D4%5Epimgpsh_fullsize_distr-1047x563.jpg"
-             class="card-img-top" alt="...">
+        <img
+          src="https://furamavietnam.com/wp-content/uploads/2018/03/%5E224942630D3A5A787C2989A9F5AF4A3E34E6A8CAE8D94FA3D4%5Epimgpsh_fullsize_distr-1047x563.jpg"
+          class="card-img-top" alt="...">
         <div class="card-body">
           <h4 class="card-text"> OCEAN SUITE</h4>
-          <span>Room size:85.8m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
+          <p>Room size: {{facility.sizeRoom}}m2</p>
+          <p>Max people: {{facility.maxPeople}}</p>
+          <p>Price: {{facility.price}}</p>
+          <p>Standard: {{facility.standard}}</p>
+<!--          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning"-->
+<!--             style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>-->
           <div style="margin-top: 10px">
                 <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
                  Edit <i class="bi bi-pencil-square"></i>
                 </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 22rem;">
-        <img style="width: 100%;height: 190px" src="https://www.vn.kayak.com/rimg/himg/c6/3f/61/revato-6608-12567585-137210.jpg?width=720&height=576&crop=true"
-             class="card-img-top">
-        <div class="card-body">
-          <h4 class="card-text"> OCEAN STUDIO SUITE</h4>
-          <span>Room size:100 m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 22rem;">
-        <img style="width: 100%;height: 190px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhlQIU3YCM86KUOqDLikUQ9TvVnopwBk9UckGDth9pvdC6-ACYjcR2jXnALuH1NGGbm_k&usqp=CAU"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> OCEAN DELUXE</h4>
-          <span>Room size:100 m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left:130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-left: 100px;margin-top: 50px" class="row space-around">
-    <div class="col-4 ">
-      <div class="card" style="width: 22rem;">
-        <img style="width: 100%;height: 170px" src="https://furamavietnam.com/wp-content/uploads/2018/08/gal2.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> LAGOON SUPERIOR</h4>
-          <span>Room size:110.05 m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 22rem;">
-        <img style="width: 100%;height: 176px" src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Garden-Deluxe-twin-bed-F-370x239.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> GARDEN SUPERIOR</h4>
-          <span>Room size:95.8 Fm2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 22rem;">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/03/%5E224942630D3A5A787C2989A9F5AF4A3E34E6A8CAE8D94FA3D4%5Epimgpsh_fullsize_distr-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> OCEAN SUITE</h4>
-          <span>Room size:85.8m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-left: 100px; margin-top: 50px" class="row space-around">
-    <div class="col-4 ">
-      <div class="card" style="width: 22rem;">
-        <img src="https://resortdanang.info/wp-content/uploads/2018/12/twins-bed-lagoon-superior-furama-da-nang-1.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> GARDEN DELUXE</h4>
-          <span>Room size:85.8m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 22rem;">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/03/%5E224942630D3A5A787C2989A9F5AF4A3E34E6A8CAE8D94FA3D4%5Epimgpsh_fullsize_distr-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> OCEAN SUITE</h4>
-          <span>Room size:85.8m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 22rem;">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/03/%5E224942630D3A5A787C2989A9F5AF4A3E34E6A8CAE8D94FA3D4%5Epimgpsh_fullsize_distr-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <h4 class="card-text"> OCEAN SUITE</h4>
-          <span>Room size:85.8m2</span>
-          <a href="https://furamavietnam.com/vi/rooms/ocean-suite/" class="btn btn-outline-warning" style="border: white;margin-left: 75px;color: black"> Detail <i class="bi bi-eye"></i></a>
-          <div style="margin-top: 10px">
-                <span> <button type="button" class="btn btn-warning" style="color: black;border: white">
-                 Edit <i class="bi bi-pencil-square"></i>
-                </button></span>
-            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i class="bi bi-trash3"></i></button></span>
+            <span> <button type="button" class="btn btn-danger" style="color: white;border: white;margin-left: 130px">Delete <i
+              class="bi bi-trash3"></i></button></span>
           </div>
         </div>
       </div>

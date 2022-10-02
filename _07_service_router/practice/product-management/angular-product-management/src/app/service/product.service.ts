@@ -5,59 +5,25 @@ import {Product} from "../model/product";
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = [{
-    id: 1,
-    name: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    id: 2,
-    name: 'IPhone 11',
-    price: 1560000,
-    description: 'new'
-  }, {
-    id: 3,
-    name: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    id: 4,
-    name: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: '95%'
-  }];
 
-  constructor() {
+  API_URl = 'http://localhost:3000/'
+
+  constructor(private http: HttpClient) { }
+
+  getAll(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.API_URl + 'products');
   }
+  saveProduct(product): Observable<void> {
+    return this.http.post<void>(this.API_URl + 'products', product);
+  };
+  findById(id: number): Observable<Product>{
+    return this.http.get<Product>(this.API_URl + 'products/' + id);
 
-  getAll() {
-    return this.products;
   }
-
-  saveProduct(product) {
-    this.products.push(product);
+  update(productEdit: Product){
+    return this.http.patch<void>(this.API_URl + 'products/' + productEdit.id, productEdit);
   }
-
-  findById(id: number) {
-    return this.products.find(product => product.id === id);
-  }
-
-  updateProduct(id: number, product: Product) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].id === id) {
-        this.products[i] = product;
-      }
-    }
-  }
-
-  deleteProduct(id: number) {
-    this.products = this.products.filter(product => {
-      return product.id !== id;
-    });
+  delete(id: number){
+    return this.http.delete<Product>(this.API_URl + 'products/' + id);
   }
 }
