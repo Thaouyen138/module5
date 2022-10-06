@@ -13,6 +13,14 @@ import { FacilityEditComponent } from './facility/facility-edit/facility-edit.co
 import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
 import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { EmployeeComponent } from './employee/employee.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+import { TestHeaderComponent } from './test-header/test-header.component';
+import { TestFooterComponent } from './test-footer/test-footer.component';
+import { TestHomeComponent } from './test-home/test-home.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +34,25 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
     FacilityEditComponent,
     FacilityCreateComponent,
     CustomerCreateComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    EmployeeComponent,
+    TestHeaderComponent,
+    TestFooterComponent,
+    TestHomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      closeButton: true,
+      progressBar: true,
+      positionClass: 'toast-top-right',
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

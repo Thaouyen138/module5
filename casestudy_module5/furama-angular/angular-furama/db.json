@@ -1,0 +1,179 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Plantinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    }
+  ],
+  "customerList": [
+    {
+      "id": "1",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Nguyen Thao Uyen",
+      "dateOfBirth": "2002-11-11",
+      "gender": "0",
+      "indentity": "201799679",
+      "phone": "0935430700",
+      "email": "girl9xtimboy2k",
+      "address": "Da Nang"
+    },
+    {
+      "id": "2",
+      "customerType": {
+        "id": 2,
+        "name": "Plantinum"
+      },
+      "name": "Quang NN",
+      "dateOfBirth": "2002-07-03",
+      "gender": "1",
+      "indentity": "123456",
+      "phone": "0333.333.333",
+      "email": "quangkute.com",
+      "address": "Da Nang"
+    },
+    {
+      "id": "4",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Công NT",
+      "dateOfBirth": "2002-11-11",
+      "gender": "1",
+      "indentity": "11112002",
+      "phone": "0905123321",
+      "email": "cong2k@gmail.com",
+      "address": "Da Nang"
+    }
+  ],
+  "educationDegree": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Lễ Tân"
+    },
+    {
+      "id": 2,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 3,
+      "name": "Chuyên viên"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    },
+    {
+      "id": 5,
+      "name": "Giám đốc"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Sale-marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành chính"
+    },
+    {
+      "id": 3,
+      "name": "Quản lý"
+    },
+    {
+      "id": 4,
+      "name": "Phục vụ"
+    }
+  ],
+  "employeeList": [
+    {
+      "id": 1,
+      "name": "Nguyễn Thảo Uyên",
+      "dateOfBirth": "2002-02-02",
+      "identity": "123321",
+      "email": "123@321",
+      "phone": "0900999009",
+      "educationDegree": {
+        "id": 3,
+        "name": "Đại học"
+      },
+      "position": {
+        "id": 5,
+        "name": "Giám đốc"
+      },
+      "division": {
+        "id": 2,
+        "name": "Hành chính"
+      },
+      "salary": "1234"
+    },
+    {
+      "id": "2",
+      "name": "Đào Minh Trí",
+      "dateOfBirth": "1999-02-20",
+      "identity": "20021999",
+      "phone": "0909099090",
+      "email": "tri9x@gmail.com",
+      "educationDegree": {
+        "id": 2,
+        "name": "Cao đẳng"
+      },
+      "position": {
+        "id": 3,
+        "name": "Chuyên viên"
+      },
+      "division": {
+        "id": 3,
+        "name": "Quản lý"
+      },
+      "salary": "1000"
+    },
+    {
+      "id": "3",
+      "name": "Nguyễn Thanh Công",
+      "dateOfBirth": "2001-01-01",
+      "identity": "01012001",
+      "phone": "0901010101",
+      "email": "cong2k@gmail.com",
+      "educationDegree": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "position": {
+        "id": 2,
+        "name": "Phục vụ"
+      },
+      "division": {
+        "id": 3,
+        "name": "Quản lý"
+      },
+      "salary": "200"
+    }
+  ]
+}

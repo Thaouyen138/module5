@@ -1,0 +1,57 @@
+<div class="container-fluid" style="background: linear-gradient(honeydew,#fbffff)">
+  <div class="row" style="margin-top: 40px">
+    <div class="col-6">
+      <div class="row" style="background: linear-gradient(honeydew,#fbffff);padding: 0px">
+        <div class="col-3"></div>
+        <div class="col-9">
+          <h3 style="color: cadetblue">CƠ CHẾ HOẠT ĐỘNG DỰ ÁN ANGULAR
+          </h3>
+          <p style="font-size: 18px">Angular sẽ làm các bước sau đây để hiển thị trang home khi chúng ta chạy ng serve
+            -o
+            <br>
+            • Angular sẽ load file index.html.<br>
+            • Angular tiếp tục nạp các thư viện và các thư viện bên thứ 3 vào.<br>
+            • Angular sẽ load file main.ts.<br>
+            • Trong file main.ts Angular sẽ load module cha là app.modules.ts.<br>
+            Trong app.modules.ts ta load lên module cha component (root) hay còn gọi là root component. Trong dự án
+            Angular ta sẽ có nhiều component. Mỗi component là 1 phần của view hiển thị cho người dùng.
+            Trong module component sẽ có các file html,css (view) lúc đó sẽ hiển thị trang web cho người dùng.
+          </p>
+          <img style="width: 100% ; margin-top: 20px"
+               src="https://vtc.edu.vn/wp-content/uploads/2018/11/cac-thanh-phan-cua-angular-js.png" alt="">
+          <img style="width: 100% ; margin-top: 20px"
+               src="https://james.codegym.vn/pluginfile.php/49088/mod_page/content/9/angular-archtechture.png?time=1613965087408" alt="">
+        </div>
+
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="col-9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ATZ5fpThy2g" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        <h3 style="margin-top: 20px;color: cadetblue">[Bài đọc] Kiến trúc của Angular
+        </h3>
+<hr>
+        <p style=" font-size: 18px">
+
+          Mỗi ứng dụng Angular có ít nhất một module, module gốc. Module gốc có thể là module duy nhất trong một ứng
+          dụng nhỏ, nhưng hầu hết các ứng dụng đều có nhiều hơn một module tính năng, mỗi khối gắn kết của mã dành riêng
+          cho một application domain, một workflow hoặc một bộ có liên quan chặt chẽ về khả năng.
+          <br>
+          Các module trong Angular được đánh dấu với annotation @NgModule, một NgModule có các thành phần như sau:
+          <br>
+          • declarations: Dùng để khai báo những thành phần chúng ta sẽ dùng ở trên template (thường chủ yếu là các
+          component, directive và pipe). <br>
+          • exports: danh sách tên các module hoặc component có thể sử dụng module này<br>
+          •imports: Nó là một mảng các module cần thiết để được sử dụng trong ứng dụng. Nó cũng có thể được sử dụng bởi
+          các Component trong mảng Declarations.<br>
+          •providers: Dùng để khai báo các service dùng trong toàn bộ các module của con<br>
+          •bootstrap: Định nghĩa component gốc của module
+        </p>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+</div>

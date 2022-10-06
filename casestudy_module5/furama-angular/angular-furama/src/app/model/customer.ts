@@ -1,4 +1,4 @@
-import {CustomerType} from "../../model/customer-type";
+import {CustomerType} from "./customer-type";
 
 export interface Customer {
   id: string,

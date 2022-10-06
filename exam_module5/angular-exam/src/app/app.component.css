@@ -1,0 +1,125 @@
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-button:hover {
+  background-color: goldenrod;
+  border-radius: 20px;
+}
+
+.bg-color {
+  background: linear-gradient(#A6CCB8,#4E7A6E);
+}
+
+.bg-color-footer {
+  background: linear-gradient(#7ABF8C,#67979C,#52787D);
+}
+
+.container {
+  position: relative;
+}
+
+.container .noi_dung {
+  width: 80px;
+  height: 70px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: reveal 3s ease-in-out forwards;
+}
+
+.container .noi_dung img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .noi_dung::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: white;
+  z-index: 1;
+  animation: reveal 7s reverse forwards;
+  animation-delay: 3s;
+  transform-origin: right;
+}
+
+@keyframes reveal {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.container .noi_dung p {
+  position: absolute;
+  right: -100px;
+  bottom: 0px;
+  margin: 0;
+  padding: 10px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: reveal 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.container .noi_dung p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+  animation: reveal 1s reverse forwards;
+  animation-delay: 2s;
+  transform-origin: right;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-button:hover {
+  background-color: red;
+  border-radius: 20px;
+}
+body{
+  width: 100%;
+  height: 100%;
+}
+
+
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 0 30px 30px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+}
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+}

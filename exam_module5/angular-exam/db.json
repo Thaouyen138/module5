@@ -1,0 +1,147 @@
+{
+  "loaiXe": [
+    {
+      "id": 1,
+      "tenLoaiXe": "Giường nằm"
+    },
+    {
+      "id": 2,
+      "tenLoaiXe": "Ghế ngồi"
+    }
+  ],
+  "nhaXe": [
+    {
+      "id": 1,
+      "tenNhaXe": "Mai Linh"
+    },
+    {
+      "id": 2,
+      "tenNhaXe": "Hoàng Long"
+    },
+    {
+      "id": 3,
+      "tenNhaXe": "Phương trang"
+    }
+  ],
+  "benXe": [
+    {
+      "id": 1231,
+      "loaiXe": {
+        "id": 2,
+        "tenLoaiXe": "Ghế ngồi"
+      },
+      "nhaXe": {
+        "id": 2,
+        "tenNhaXe": "Hoàng Long"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Trị",
+      "soDienThoai": "+84000999911",
+      "email": "mailinh@gmail.com",
+      "gioDi": "01:20",
+      "gioDen": "03:00"
+    },
+    {
+      "id": 1222,
+      "loaiXe": {
+        "id": 2,
+        "tenLoaiXe": "Ghế ngồi"
+      },
+      "nhaXe": {
+        "id": 2,
+        "tenNhaXe": "Hoàng Long"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Bình",
+      "soDienThoai": "+84119999999",
+      "email": "hoanglong@gmail.com",
+      "gioDi": "22:20",
+      "gioDen": "23:00"
+    },
+    {
+      "id": 2311,
+      "loaiXe": {
+        "id": 1,
+        "tenLoaiXe": "Giường nằm"
+      },
+      "nhaXe": {
+        "id": 3,
+        "tenNhaXe": "Phương Trang"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Huế",
+      "soDienThoai": "+84090933341",
+      "email": "phuongtrang@gmail.com",
+      "gioDi": "14:20",
+      "gioDen": "14:40"
+    },
+    {
+      "id": 9401,
+      "loaiXe": {
+        "id": 1,
+        "tenLoaiXe": "Giường nằm"
+      },
+      "nhaXe": {
+        "id": 1,
+        "tenNhaXe": "Mai Linh"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Thanh Hóa",
+      "soDienThoai": "+84122121212",
+      "email": "maiLinh@gmail.comm",
+      "gioDi": "15:30",
+      "gioDen": "17:00"
+    },
+    {
+      "id": "9212",
+      "loaiXe": {
+        "id": 2,
+        "tenLoaiXe": "Ghế ngồi"
+      },
+      "nhaXe": {
+        "id": 2,
+        "tenNhaXe": "Hoàng Long"
+      },
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng Bình",
+      "soDienThoai": "+84321001233",
+      "email": "hoanglong@gmail.com",
+      "gioDi": "00:00",
+      "gioDen": "07:00"
+    },
+    {
+      "id": "8932",
+      "loaiXe": {
+        "id": 2,
+        "tenLoaiXe": "Ghế ngồi"
+      },
+      "nhaXe": {
+        "id": 2,
+        "tenNhaXe": "Hoàng Long"
+      },
+      "diemDi": "Hải Phòng",
+      "diemDen": "Đà Nẵng",
+      "soDienThoai": "+84111122223",
+      "email": "hoanglong@gmail.com",
+      "gioDi": "02:30",
+      "gioDen": "09:00"
+    },
+    {
+      "id": "1245",
+      "loaiXe": {
+        "id": 1,
+        "tenLoaiXe": "Giường nằm"
+      },
+      "nhaXe": {
+        "id": 1,
+        "tenNhaXe": "Mai Linh"
+      },
+      "diemDi": "Vũng Tàu",
+      "diemDen": "Đà Lạt",
+      "soDienThoai": "+84888999000",
+      "email": "mailinh@gmail.com",
+      "gioDi": "03:30",
+      "gioDen": "06:30"
+    }
+  ]
+}

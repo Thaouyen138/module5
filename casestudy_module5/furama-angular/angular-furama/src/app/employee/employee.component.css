@@ -1,0 +1,23 @@
+p{color: red}
+.bg-color {
+  background: linear-gradient(#A6CCB8,#4E7A6E);
+  border-radius: 10px
+}
+.bg-color-footer {
+  background: linear-gradient(#7ABF8C,#67979C,#52787D);
+}
+.color-text{
+  color:#67979C ;
+}
+.bg-edit{
+  background:linear-gradient(#fffa66,#ffc83c,#ff9d13,#ff6620,#ff3538);
+  border-radius: 10px;
+  border: none;
+}
+.bg-delete{
+  background:red;
+  border-radius: 10px;
+}
+btn{
+
+}

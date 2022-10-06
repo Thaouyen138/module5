@@ -1,0 +1,371 @@
+
+  <div class="row  " >
+    <div class="col-6">
+      <h3 style="text-align: center"> EMPLOYEE LIST</h3>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-4 mt-2">
+          <input style="border-radius: 10px" placeholder="Name" type="text" [(ngModel)]="name">
+        </div>
+        <div class="col-4 mt-2">
+          <input  style="border-radius: 10px" placeholder="Phone" type="text" [(ngModel)]="phone">
+        </div>
+        <div class="col-4 mt-1">
+          <button style="width: 30%" class="bg-color mb-1 center-box form-control text-dark" (click)="search()">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <table class="table table-hover table-striped table-center " style="margin-top: 0px" id="table">
+    <thead>
+    <tr style="height: 70px">
+      <th style="height: 70px" class="border-0 text-white bg-dark">STT</th>
+      <th style="height: 70px" class="border-0 text-white  bg-dark">NAME</th>
+      <th style="height: 70px" class="border-0 text-white  bg-dark">PHONE</th>
+      <th style="height: 70px" class="border-0 text-white  bg-dark">EDUCATION</th>
+      <th style="height: 70px" class="border-0 text-white  bg-dark">POSITION</th>
+      <th style="height: 70px" class="border-0 text-white  bg-dark">DIVISION</th>
+      <th style="height: 70px" class="border-0 bg-dark color-text">𝔻𝔼𝕋𝔸𝕀𝕃</th>
+      <th style="height: 70px" class="border-0 bg-dark  text-warning">𝔼𝔻𝕀𝕋</th>
+      <th style="height: 70px" class="border-0 bg-dark ">
+        <span style="color: red">𝔻</span>
+        <span style="color: white">𝔼</span>
+        <span style="color: gold">𝕃</span>
+        <span style="color: white">𝔼</span>
+        <span style="color: gold">T</span>
+        <span style="color: red">𝔼</span>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr style="height: 40px" *ngFor="let employee of employeeList index as i">
+      <td>{{i +1}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.phone}}</td>
+      <td>{{employee.educationDegree.name}}</td>
+      <td>{{employee.position.name}}</td>
+      <td>{{employee.division.name}}</td>
+      <td>
+        <button type="button"  (click)="detail(employee)" class="btn bg-color text-dark " style="color: white;border: white" data-toggle="modal" data-target="#detail">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+          </svg>
+        </button>
+      </td>
+      <td>
+        <button class="btn bg-edit text-dark" type="button" (click)="edit(employee)" data-toggle="modal" data-target="#edit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg>
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn bg-delete " style="color: white;border: white" data-toggle="modal" data-target="#delete"
+                (click)="setDelete(employee.id)">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div class="row">
+    <div class="col-4" >
+      <button (click)="resetForm()" class="bg-color center-box form-control text-dark" data-toggle="modal" data-target="#addNew">𝔸𝔻𝔻</button>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+  </div>
+
+
+  <!--modal-edit-->
+  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header center-box border-0">
+          <h5 class="modal-title ">EDIT EMPLOYEE</h5>
+        </div>
+        <div class="modal-body border-0">
+          <form [formGroup]="employeeForm">
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" class="form-control" formControlName="name">
+              <p
+                *ngIf="employeeForm.controls.name.hasError('required')
+              &&( employeeForm.controls.name.touched || employeeForm.controls.name.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>DateOfBirth:</label>
+              <input type="date" class="form-control" formControlName="dateOfBirth">
+              <p
+                *ngIf="employeeForm.controls.dateOfBirth.hasError('required')
+              &&( employeeForm.controls.dateOfBirth.touched || employeeForm.controls.dateOfBirth.dirty)">
+                Not Empty
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label>Identity :</label>
+              <input type="text" class="form-control" formControlName="identity">
+              <p
+                *ngIf="employeeForm.controls.identity.hasError('required')
+              &&( employeeForm.controls.identity.touched || employeeForm.controls.identity.dirty)">
+                Not Empty
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label>Phone :</label>
+              <input type="text" class="form-control" formControlName="phone">
+              <p
+                *ngIf="employeeForm.controls.phone.hasError('required')
+              &&( employeeForm.controls.phone.touched || employeeForm.controls.phone.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Email :</label>
+              <input type="text" class="form-control" formControlName="email">
+              <p
+                *ngIf="employeeForm.controls.email.hasError('required')
+              &&( employeeForm.controls.email.touched || employeeForm.controls.email.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Education degree</label>
+              <select class="form-control" formControlName="educationDegree" [compareWith]="compareWithId">
+                <option value="">--Choose education--</option>
+                <option [ngValue]="educationDegree" *ngFor="let educationDegree of educationDegreeList ">{{educationDegree.name}}</option>
+              </select>
+              <p
+                *ngIf="employeeForm.controls.educationDegree.hasError('required')
+              &&( employeeForm.controls.educationDegree.touched || employeeForm.controls.educationDegree.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Position</label>
+              <select class="form-control" formControlName="position" [compareWith]="compareWithId">
+                <option value="">--Choose position--</option>
+                <option [ngValue]="positions" *ngFor="let positions of positionList ">{{positions.name}}</option>
+              </select>
+              <p
+                *ngIf="employeeForm.controls.position.hasError('required')
+              &&( employeeForm.controls.position.touched || employeeForm.controls.position.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Division</label>
+              <select class="form-control" formControlName="division" [compareWith]="compareWithId">
+                <option value="">--Choose division--</option>
+                <option [ngValue]="division" *ngFor="let division of divisionList ">{{division.name}}</option>
+              </select>
+              <p
+                *ngIf="employeeForm.controls.division.hasError('required')
+              &&( employeeForm.controls.division.touched || employeeForm.controls.division.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Salary :</label>
+              <input type="text" class="form-control" formControlName="salary">
+              <p
+                *ngIf="employeeForm.controls.salary.hasError('required')
+              &&( employeeForm.controls.salary.touched || employeeForm.controls.salary.dirty)">
+                Not Empty
+              </p>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" [disabled]="employeeForm.invalid"
+                  (click)="update()">Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--modal-add-->
+  <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header center-box border-0">
+          <h5 class="modal-title ">ADD NEW</h5>
+        </div>
+        <div class="modal-body border-0">
+          <form [formGroup]="employeeForm">
+            <div class="form-group">
+              <label>Id:</label>
+              <input type="text" class="form-control" formControlName="id">
+              <p
+                *ngIf="employeeForm.controls.id.hasError('required')
+              &&( employeeForm.controls.id.touched || employeeForm.controls.id.dirty)">
+                Not Empty
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" class="form-control" formControlName="name">
+              <p
+                *ngIf="employeeForm.controls.name.hasError('required')
+              &&( employeeForm.controls.name.touched || employeeForm.controls.name.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>DateOfBirth:</label>
+              <input type="date" class="form-control" formControlName="dateOfBirth">
+              <p
+                *ngIf="employeeForm.controls.dateOfBirth.hasError('required')
+              &&( employeeForm.controls.dateOfBirth.touched || employeeForm.controls.dateOfBirth.dirty)">
+                Not Empty
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label>Identity :</label>
+              <input type="text" class="form-control" formControlName="identity">
+              <p
+                *ngIf="employeeForm.controls.identity.hasError('required')
+              &&( employeeForm.controls.identity.touched || employeeForm.controls.identity.dirty)">
+                Not Empty
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label>Phone :</label>
+              <input type="text" class="form-control" formControlName="phone">
+              <p
+                *ngIf="employeeForm.controls.phone.hasError('required')
+              &&( employeeForm.controls.phone.touched || employeeForm.controls.phone.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Email :</label>
+              <input type="text" class="form-control" formControlName="email">
+              <p
+                *ngIf="employeeForm.controls.email.hasError('required')
+              &&( employeeForm.controls.email.touched || employeeForm.controls.email.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Education degree</label>
+              <select class="form-control" formControlName="educationDegree" >
+                <option value="">--Choose education--</option>
+                <option [ngValue]="educationDegree" *ngFor="let educationDegree of educationDegreeList ">{{educationDegree.name}}</option>
+              </select>
+              <p
+                *ngIf="employeeForm.controls.educationDegree.hasError('required')
+              &&( employeeForm.controls.educationDegree.touched || employeeForm.controls.educationDegree.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Position</label>
+              <select class="form-control" formControlName="position" >
+                <option value="">--Choose position--</option>
+                <option [ngValue]="positions" *ngFor="let positions of positionList ">{{positions.name}}</option>
+              </select>
+              <p
+                *ngIf="employeeForm.controls.position.hasError('required')
+              &&( employeeForm.controls.position.touched || employeeForm.controls.position.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Division</label>
+              <select class="form-control" formControlName="division" >
+                <option value="">--Choose division--</option>
+                <option [ngValue]="division" *ngFor="let division of divisionList ">{{division.name}}</option>
+              </select>
+              <p
+                *ngIf="employeeForm.controls.division.hasError('required')
+              &&( employeeForm.controls.division.touched || employeeForm.controls.division.dirty)">
+                Not Empty
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Salary :</label>
+              <input type="text" class="form-control" formControlName="salary">
+              <p
+                *ngIf="employeeForm.controls.salary.hasError('required')
+              &&( employeeForm.controls.salary.touched || employeeForm.controls.salary.dirty)">
+                Not Empty
+              </p>
+            </div>
+          </form>
+
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" [disabled]="employeeForm.invalid"
+                  (click)="onSubmit()">Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal detele-->
+  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header center-box border-0">
+          <h5 class="modal-title ">DELETE FACILITY</h5>
+        </div>
+        <div class="modal-body border-0">
+          Are you sure to delete employee have {{idToDelete}}
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal detail-->
+  <div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header center-box border-0">
+          <h5 class="modal-title ">EMPLOYEE</h5>
+        </div>
+        <div class="modal-body border-0">
+          <p class="text-dark">Id: {{employeeDetail.id}}</p>
+          <p class="text-dark">Name: {{employeeDetail.name}}</p>
+          <p class="text-dark">Date of birth: {{employeeDetail.dateOfBirth}}</p>
+          <p class="text-dark">Identity: {{employeeDetail.identity}}</p>
+          <p class="text-dark">Phone: {{employeeDetail.phone}}</p>
+          <p class="text-dark">Email: {{employeeDetail.email}}</p>
+          <p class="text-dark">Education: {{employeeDetail.educationDegree.name}}</p>
+          <p class="text-dark">Position: {{employeeDetail.position.name}}</p>
+          <p class="text-dark">Division: {{employeeDetail.division.name}}</p>
+          <p class="text-dark">Salary: {{employeeDetail.salary}}</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

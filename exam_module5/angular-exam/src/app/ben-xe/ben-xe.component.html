@@ -1,0 +1,293 @@
+
+<div class="row">
+  <div class="col-4" >
+    <button  style="margin-left: 30px;margin-top: 10px;width: 150px;margin-bottom: 10px"  (click)="resetForm()" class ="bg-color center-box form-control text-dark" data-toggle="modal" data-target="#addNew">THÊM MỚI</button>
+  </div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+<table class="table table-hover table-striped table-center " style="margin-top: 0px" id="table">
+  <thead>
+  <tr style="height: 70px">
+    <th style="height: 70px" class="border-0 text-white bg-dark">STT</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">LOẠI XE</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">TÊN NHÀ XE</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">ĐIỂM ĐI</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">ĐIỂM ĐẾN</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">SỐ ĐIỆN THOẠI</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">EMAIL</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">GIỜ ĐI</th>
+    <th style="height: 70px" class="border-0 text-white  bg-dark">GIỜ ĐẾN</th>
+    <th style="height: 70px" class="border-0 bg-dark  text-warning">CHỈNH SỬA</th>
+    <th style="height: 70px" class="border-0 bg-dark ">
+      <span style="color: red">X</span>
+      <span style="color: white">O</span>
+      <span style="color: gold">Á</span>
+    </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr style="height: 40px" *ngFor="let benXe of benXeList| paginate :
+{ itemsPerPage: 5, currentPage: page + 1, totalItems: totalItems }">
+    <td>{{benXe.id}}</td>
+    <td>{{benXe.loaiXe.tenLoaiXe}}</td>
+    <td>{{benXe.nhaXe.tenNhaXe}}</td>
+    <td>{{benXe.diemDi}}</td>
+    <td>{{benXe.diemDen}}</td>
+    <td>{{benXe.soDienThoai}}</td>
+    <td>{{benXe.email}}</td>
+    <td>{{benXe.gioDi}}</td>
+    <td>{{benXe.gioDen}}</td>
+
+    <td>
+      <button class="btn btn-warning text-dark" type="button" (click)="edit(benXe)" data-toggle="modal" data-target="#edit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg>
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger " style="color: white;border: white" data-toggle="modal" data-target="#delete"
+              (click)="setDelete(benXe.id)">
+        <i class="bi bi-trash3"></i>
+      </button>
+    </td>
+  </tr>
+</table>
+<pagination-controls previousLabel="Trước"
+                     nextLabel="Sau" (pageChange)="getPage($event)"
+                     style="float: right">
+</pagination-controls>
+
+<!--modal-add-->
+<div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header center-box border-0">
+        <h5 class="modal-title ">ADD NEW</h5>
+      </div>
+      <div class="modal-body border-0">
+        <form [formGroup]="benXeForm">
+          <div class="form-group">
+            <label>Loai Xe</label>
+            <select class="form-control" formControlName="loaiXe">
+              <option value=''>--Chọn Loại Xe--</option>
+              <option [ngValue]="loaiXe" *ngFor="let loaiXe of loaiXeList ">{{loaiXe.tenLoaiXe}}</option>
+            </select>
+            <p
+              *ngIf="benXeForm.controls.loaiXe.hasError('required')
+              &&( benXeForm.controls.loaiXe.touched || benXeForm.controls.loaiXe.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Nhà Xe</label>
+            <select class="form-control" formControlName="nhaXe">
+              <option value=''>--Chọn Nhà Xe--</option>
+              <option [ngValue]="nhaXe" *ngFor="let nhaXe of nhaXeList ">{{nhaXe.tenNhaXe}}</option>
+            </select>
+            <p
+              *ngIf="benXeForm.controls.nhaXe.hasError('required')
+              &&( benXeForm.controls.nhaXe.touched || benXeForm.controls.nhaXe.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Điểm Đi:</label>
+            <input type="text" class="form-control" formControlName="diemDi">
+            <p
+              *ngIf="benXeForm.controls.diemDi.hasError('required')
+              &&( benXeForm.controls.diemDi.touched || benXeForm.controls.diemDi.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Điểm Đến:</label>
+            <input type="text" class="form-control" formControlName="diemDen">
+            <p
+              *ngIf="benXeForm.controls.diemDen.hasError('required')
+              &&( benXeForm.controls.diemDen.touched || benXeForm.controls.diemDen.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại:</label>
+            <input type="text" class="form-control" formControlName="soDienThoai">
+            <p
+              *ngIf="benXeForm.controls.soDienThoai.hasError('required')
+              &&( benXeForm.controls.soDienThoai.touched || benXeForm.controls.soDienThoai.dirty)">
+              Không được để trống
+            </p>
+            <p *ngIf="benXeForm.controls.soDienThoai.hasError('pattern')">Sai định dạng số điện thoại!</p>
+
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="text" class="form-control" formControlName="email">
+            <p
+              *ngIf="benXeForm.controls.email.hasError('required')
+              &&( benXeForm.controls.email.touched || benXeForm.controls.email.dirty)">
+              Không được để trống
+            </p>
+            <p *ngIf="benXeForm.controls.email.hasError('email') && benXeForm.controls.email.touched">Sai định dạng email!</p>
+
+          </div>
+          <div class="form-group">
+            <label>Giờ Đi:</label>
+            <input type="date" class="form-control" formControlName="gioDi">
+            <p
+              *ngIf="benXeForm.controls.gioDi.hasError('required')
+              &&( benXeForm.controls.gioDi.touched || benXeForm.controls.gioDi.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Giờ Đến:</label>
+            <input type="date" class="form-control" formControlName="gioDen">
+            <p
+              *ngIf="benXeForm.controls.gioDen.hasError('required')
+              &&( benXeForm.controls.gioDen.touched || benXeForm.controls.gioDen.dirty)">
+              Không được để trống
+            </p>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" [disabled]="benXeForm.invalid"
+                (click)="onSubmit()">Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header center-box border-0">
+        <h5 class="modal-title ">EDIT EMPLOYEE</h5>
+      </div>
+      <div class="modal-body border-0">
+        <form [formGroup]="benXeForm">
+          <div class="form-group">
+            <label>Số xe:</label>
+            <input disabled type="text" class="form-control" formControlName="id">
+          </div>
+          <div class="form-group">
+            <label>Loai Xe</label>
+            <select class="form-control" formControlName="loaiXe" [compareWith]="compareWithId">
+              <option value="">--Chọn Loại Xe--</option>
+              <option [ngValue]="loaiXe" *ngFor="let loaiXe of loaiXeList ">{{loaiXe.tenLoaiXe}}</option>
+            </select>
+            <p
+              *ngIf="benXeForm.controls.loaiXe.hasError('required')
+              &&( benXeForm.controls.loaiXe.touched || benXeForm.controls.loaiXe.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Nhà Xe</label>
+            <select class="form-control" formControlName="nhaXe" [compareWith]="compareWithId">
+              <option value="">--Chọn Nhà Xe--</option>
+              <option [ngValue]="nhaXe" *ngFor="let nhaXe of nhaXeList ">{{nhaXe.tenNhaXe}}</option>
+            </select>
+            <p
+              *ngIf="benXeForm.controls.nhaXe.hasError('required')
+              &&( benXeForm.controls.nhaXe.touched || benXeForm.controls.nhaXe.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Điểm Đi:</label>
+            <input type="text" class="form-control" formControlName="diemDi">
+            <p
+              *ngIf="benXeForm.controls.diemDi.hasError('required')
+              &&( benXeForm.controls.diemDi.touched || benXeForm.controls.diemDi.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Điểm Đến:</label>
+            <input type="text" class="form-control" formControlName="diemDen">
+            <p
+              *ngIf="benXeForm.controls.diemDen.hasError('required')
+              &&( benXeForm.controls.diemDen.touched || benXeForm.controls.diemDen.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại:</label>
+            <input type="text" class="form-control" formControlName="soDienThoai">
+            <p
+              *ngIf="benXeForm.controls.soDienThoai.hasError('required')
+              &&( benXeForm.controls.soDienThoai.touched || benXeForm.controls.soDienThoai.dirty)">
+              Không được để trống
+            </p>
+            <p *ngIf="benXeForm.controls.soDienThoai.hasError('pattern')">Sai định dạng số điện thoại!</p>
+
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="text" class="form-control" formControlName="email">
+            <p
+              *ngIf="benXeForm.controls.email.hasError('required')
+              &&( benXeForm.controls.email.touched || benXeForm.controls.email.dirty)">
+              Không được để trống
+            </p>
+            <p *ngIf="benXeForm.controls.email.hasError('email') && benXeForm.controls.email.touched">Sai định dạng email!</p>
+
+          </div>
+          <div class="form-group">
+            <label>Giờ Đi:</label>
+            <input type="date" class="form-control" formControlName="gioDi">
+            <p
+              *ngIf="benXeForm.controls.gioDi.hasError('required')
+              &&( benXeForm.controls.gioDi.touched || benXeForm.controls.gioDi.dirty)">
+              Không được để trống
+            </p>
+          </div>
+          <div class="form-group">
+            <label>Giờ Đến:</label>
+            <input type="date" class="form-control" formControlName="gioDen">
+            <p
+              *ngIf="benXeForm.controls.gioDen.hasError('required')
+              &&( benXeForm.controls.gioDen.touched || benXeForm.controls.gioDen.dirty)">
+              Không được để trống
+            </p>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" [disabled]="benXeForm.invalid"
+                (click)="update()">Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal detele-->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header center-box border-0">
+        <h5 class="modal-title ">BEN XE</h5>
+      </div>
+      <div class="modal-body border-0">
+        Bạn có đồng ý xóa thông tin của xe khách có số xe {{idToDelete}} ?
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
